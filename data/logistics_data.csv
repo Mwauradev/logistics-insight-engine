@@ -1,0 +1,16 @@
+date,route,driver,vehicle,deliveries_scheduled,deliveries_completed,fuel_cost,distance_km,delay_minutes,cargo_weight_kg
+2026-01-05,Nairobi-Mombasa,James Mwangi,KCA 001A,12,11,8500,480,35,4200
+2026-01-06,Nairobi-Kisumu,Peter Otieno,KBZ 342C,8,8,6200,340,0,2800
+2026-01-07,Nairobi-Nakuru,Samuel Kamau,KCX 891B,15,13,4100,160,20,3100
+2026-01-08,Mombasa-Malindi,James Mwangi,KCA 001A,6,6,2800,120,0,1800
+2026-01-09,Nairobi-Eldoret,Grace Wanjiku,KDD 567D,10,8,7200,310,55,3500
+2026-01-10,Nairobi-Mombasa,Peter Otieno,KBZ 342C,12,12,8800,480,0,4500
+2026-01-11,Nairobi-Kisumu,Samuel Kamau,KCX 891B,9,7,6400,340,40,2900
+2026-01-12,Nairobi-Nakuru,Grace Wanjiku,KDD 567D,14,14,4300,160,0,3200
+2026-01-13,Mombasa-Malindi,James Mwangi,KCA 001A,7,6,3100,120,25,2100
+2026-01-14,Nairobi-Eldoret,Peter Otieno,KBZ 342C,11,10,7500,310,15,3800
+2026-01-15,Nairobi-Mombasa,Samuel Kamau,KCX 891B,13,11,9200,480,45,4100
+2026-01-16,Nairobi-Kisumu,Grace Wanjiku,KDD 567D,8,8,6100,340,0,2700
+2026-01-17,Nairobi-Nakuru,James Mwangi,KCA 001A,16,15,4500,160,10,3400
+2026-01-18,Mombasa-Malindi,Peter Otieno,KBZ 342C,5,5,2600,120,0,1600
+2026-01-19,Nairobi-Eldoret,Samuel Kamau,KCX 891B,12,9,7800,310,60,3900
