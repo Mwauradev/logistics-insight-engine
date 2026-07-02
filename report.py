@@ -1,5 +1,6 @@
 from analyzer import load_data, analyze
 from ai_insights import generate_logistics_insight
+from pdf_exporter import export_logistics_pdf
 
 df = load_data('data/logistics_data.csv')
 results = analyze(df)
@@ -22,3 +23,8 @@ print("=" * 50)
 insight = generate_logistics_insight(results)
 print(insight)
 print("=" * 50)
+
+# Export PDF
+print("\n  Exporting PDF report...")
+export_logistics_pdf(results, insight)
+print("  Report complete.")

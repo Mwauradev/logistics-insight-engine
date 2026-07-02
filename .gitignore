@@ -4,3 +4,4 @@ __pycache__/
 .vscode/
 .ipynb_checkpoints/
 *.ipynb
+data/logistics_report.pdf
