@@ -93,7 +93,41 @@ def export_logistics_pdf(results: dict, ai_insight: str):
 
     story.append(route_table)
     story.append(Spacer(1, 0.4*inch))
+    #driver perfmance
+    driver_title = ParagraphStyle(
+        'DriverTitle',
+        parent=styles['Heading2'],
+        fontsize=14,
+        textColor=colors.HexColor('#1a1a2e')
+        spaceAfter=8
+    )
 
+    story.append(Paragraph("Driver Perfomance Breakdown", driver_title))
+
+    driver_df = results['driver_perfomance'].reset_index()
+    driver_table_data = [['Driver','Delivery Rate','Total Delays', 'Total Deliveries']]
+    for _, row in driver_df.iterrows():
+        driver_table_data.append([
+            row['driver'],
+            f"{row['avg_delivery_rate']}%",
+            f"{row['total_delays']}",
+            f"{roe['total_deliveries']}"
+        ])
+    driver_table = Table(route_table_data, colWidths=[2*inch, 1.5*inch, 1.5*inch, 1.5*inch])
+    driver_table.setStyle(TableStyle([
+        ('BACKGROUND', (0,0), (-1,0), colors.HexColor('#16213e')),
+        ('TEXTCOLOR', (0,0), (-1,0), colors.white),
+        ('FONTNAME', (0,0), (-1,0), 'Helvetica-Bold'),
+        ('ROWBACKGROUNDS', (0,1), (-1,-1), [colors.white, colors.HexColor('#f8f9fa')]),
+        ('GRID', (0,0), (-1,-1), 0.5, colors.grey),
+        ('FONTNAME', (0,1), (-1,-1), 'Helvetica'),
+        ('FONTSIZE', (0,0), (-1,-1), 10),
+        ('PADDING', (0,0), (-1,-1), 6),
+    ]))
+
+    story.append(route_table)
+    story.append(Spacer(1, 0.4*inch))
+    
     # AI Insight
     story.append(Paragraph("AI Executive Insight", route_title))
     story.append(Paragraph(ai_insight, styles['Normal']))

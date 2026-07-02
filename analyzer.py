@@ -1,7 +1,7 @@
 import pandas as pd
 
 def load_data(filepath: str) -> pd.DataFrame:
-    df = pd.read_csv(filepath)
+    df = pd.read_csv(filepath)   # converts the data to dataframe
     df['date'] = pd.to_datetime(df['date'])
     df['delivery_rate'] = (df['deliveries_completed'] / 
                           df['deliveries_scheduled'] * 100).round(1)
