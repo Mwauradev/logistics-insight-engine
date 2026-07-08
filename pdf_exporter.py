@@ -73,7 +73,7 @@ def export_logistics_pdf(results: dict, ai_insight: str):
     route_table_data = [['Route', 'Delivery Rate %', 'Fuel Cost KES', 'Avg Delay mins']]
     for _, row in route_df.iterrows():
         route_table_data.append([
-            row['route'],
+            row.name,
             f"{row['avg_delivery_rate']}%",
             f"{row['total_fuel_cost']:,}",
             f"{row['avg_delay']}"
@@ -98,20 +98,20 @@ def export_logistics_pdf(results: dict, ai_insight: str):
         'DriverTitle',
         parent=styles['Heading2'],
         fontsize=14,
-        textColor=colors.HexColor('#1a1a2e')
+        textColor=colors.HexColor('#1a1a2e'),
         spaceAfter=8
     )
 
     story.append(Paragraph("Driver Perfomance Breakdown", driver_title))
 
-    driver_df = results['driver_perfomance'].reset_index()
+    driver_df = results['driver_performance'].reset_index()
     driver_table_data = [['Driver','Delivery Rate','Total Delays', 'Total Deliveries']]
     for _, row in driver_df.iterrows():
         driver_table_data.append([
-            row['driver'],
+            row.name,
             f"{row['avg_delivery_rate']}%",
             f"{row['total_delays']}",
-            f"{roe['total_deliveries']}"
+            f"{row['total_deliveries']}"
         ])
     driver_table = Table(route_table_data, colWidths=[2*inch, 1.5*inch, 1.5*inch, 1.5*inch])
     driver_table.setStyle(TableStyle([
