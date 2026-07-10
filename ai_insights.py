@@ -16,7 +16,14 @@ def generate_logistics_insight(data: dict) -> str:
     
     Be direct. Avoid generic statements. Point to specific routes, 
     drivers, or vehicles where relevant.Do not include specific percentage savings estimates 
-unless they are directly calculated from the data provided.
+    unless they are directly calculated from the data provided.
+
+    CRITICAL RULES:
+    - Use ONLY the exact numbers provided in the data below
+    - Do not calculate or estimate any figures not explicitly given
+    - Do not invent percentages, costs, or averages
+    - If you reference a number, it must appear exactly in the data provided
+
     
     Fleet Data:
     - Overall Delivery Rate: {data['overall_delivery_rate']}%
@@ -47,8 +54,10 @@ unless they are directly calculated from the data provided.
                 "content": prompt
             }
         ],
-        max_tokens=350,
+        max_tokens=1024,
         temperature=0.7
     )
-    
+    print(f"DEBUG: {response}")
+    print(f"DEBUG content: {response.choices[0].message.content}")
+
     return response.choices[0].message.content
