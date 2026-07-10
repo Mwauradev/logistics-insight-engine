@@ -1,0 +1,4 @@
+date,route,driver,vehicle,fuel_cost,distance_km,deliveries_scheduled,deliveries_completed,delay_minutes,cargo_weight_kg
+2026-02-01,Nairobi-Mombasa,Grace Wanjiku,KDD 567D,9200,480,13,13,0,4600
+2026-02-02,Nairobi-Kisumu,Peter Otieno,KBZ 342C,6800,340,10,10,0,3100
+2026-02-03,Nairobi-Eldoret,Samuel Kamau,KCX 891B,7900,310,11,8,65,3700

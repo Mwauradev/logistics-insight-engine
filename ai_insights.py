@@ -57,7 +57,6 @@ def generate_logistics_insight(data: dict) -> str:
         max_tokens=1024,
         temperature=0.7
     )
-    print(f"DEBUG: {response}")
-    print(f"DEBUG content: {response.choices[0].message.content}")
+    
 
     return response.choices[0].message.content
